@@ -1,0 +1,35 @@
+spring:
+  profiles.active: external
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+logging:
+  charset:
+    console: UTF-8
+    file: UTF-8
+  pattern:
+    console: "[%d{HH:mm:ss.SSS}][%-5level][%.38t][%logger{39}#%method:%line] - %msg%n"
+    file: "[%d{HH:mm:ss.SSS}][%-5level][%.38t][%logger{39}#%method:%line] - %msg%n"
+
+# swagger doc
+springdoc:
+  version: v0.0.1
+  title: "Sample spring boot3 java17 gradle"
+  description: "스프링부트 샘플 자바 프로젝트"
+  packages-to-scan: com.example.samplespringboot3javagradle
+  swagger-ui:
+    path: /
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /api-docs/json
+    groups.enabled: true
+  cache.disabled: true
+  default-consumes-media-type: application/json;charset=UTF-8
+  default-produces-media-type: application/json;charset=UTF-8
